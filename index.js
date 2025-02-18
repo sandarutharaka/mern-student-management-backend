@@ -54,6 +54,10 @@ app.put('/students/:id',(req,res)=>{
     })
   })
 
+  app.get("/cicd-check",(req,res)=>{
+    res.send("CI/CD is working")
+  });
+
 
 app.listen(5000,()=>
     {console.log('Server is running on port 5000')
