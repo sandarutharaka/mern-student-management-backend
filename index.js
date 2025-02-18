@@ -3,17 +3,18 @@ import mongoose from 'mongoose';
 import Student from './studentModel.js';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+
 const app = express();
 
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 
-const mongoUrl = "mongodb+srv://user:xOugXduNfayCaFdM@cluster0.luwyo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-
+const mongoUrl = "mongodb+srv://user:xOugXduNfayCaFdM@cluster1.krri2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1"
 mongoose.connect(mongoUrl,{
   useNewUrlParser:true,
-  useUnifiedTopology:true
+  useUnifiedTopology:true,
+  
 }).then(()=>{
   console.log('Connected to MongoDB')
 })
