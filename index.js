@@ -22,11 +22,11 @@ mongoose.connect(mongourl,
 }).catch((err)=>{
     console.log(err);
 })
-app.get ("/students",(req,res)=>{
-    Student.find().
-    then((students)=>res.send(students)
-)
-})
+app.get("/students", (req, res) => {
+    Student.find()
+        .then((students) => res.send(students))
+        .catch((err) => res.send(err));
+});
 
 
 app.post('/students',(req,res)=>{
